@@ -20,14 +20,16 @@ mongoose.connect(process.env.DB_URI, {
 
 
 // middleware
-const UsersRouter = require('./routes/UsersRouter')
-const GoalsRouter = require('./routes/GoalsRouter')
 app.use(mongan('tiny'))
 app.use(cors())
 app.use(bodyParser.json())
 app.use(cookieParser());
-app.use('/users', UsersRouter)
-app.use('/goals', GoalsRouter)
+
+//route
+const UserRoute = require('./routes/UserRoute')
+const GoalRoute = require('./routes/GoalRoute')
+app.use('/users', UserRoute)
+app.use('/goals', GoalRoute)  
 
 
 
