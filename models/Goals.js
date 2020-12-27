@@ -12,7 +12,7 @@ const GoalSchema = new mongoose.Schema({
   creationDate:{
     type:Date, default: Date.now
   },
-  userId:{ type:'string' },
+  userId:{ type: mongoose.Schema.Types.ObjectId},
 })
 
 module.exports = mongoose.model('Goals', GoalSchema)
